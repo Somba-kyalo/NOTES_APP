@@ -1,0 +1,52 @@
+{% extends 'NotesApp/base.html' %}
+{% load static %}
+
+{% block title %}
+{% if form.instance.pk %}
+Edit Note
+{% else %}
+Create Note
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/note_form.css' %}">
+
+<section class="form-section">
+
+    <div class="form-container">
+
+        <h1>
+            {% if form.instance.pk %}
+            Edit Note
+            {% else %}
+            Create New Note
+            {% endif %}
+        </h1>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="{{ form.title.id_for_label }}">Title</label>
+                {{ form.title }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.content.id_for_label }}">Content</label>
+                {{ form.content }}
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" class="save-btn">Save Note</button>
+                <a href="#" class="cancel-btn">Cancel</a>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'NotesApp/base.html' %}
+{% load static %}
+
+{% block title %}{{ note.title }} | Notes Management System{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/note_detail.css' %}">
+
+<section class="note-detail">
+
+    <div class="note-card">
+
+        <h1>{{ note.title }}</h1>
+
+        <div class="note-meta">
+            <span>Created: {{ note.created_at|date:"F d, Y - H:i" }}</span>
+            <span>Last Updated: {{ note.updated_at|date:"F d, Y - H:i" }}</span>
+        </div>
+
+        <hr>
+
+        <div class="note-content">
+            <p>{{ note.content|linebreaks }}</p>
+        </div>
+
+        <div class="note-actions">
+            <a href="#" class="btn edit-btn">Edit Note</a>
+            <a href="#" class="btn delete-btn">Delete Note</a>
+            <a href="#" class="btn back-btn">Back to Notes</a>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

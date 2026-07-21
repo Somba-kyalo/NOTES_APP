@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Notes Management System{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">NotesApp</a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">All Notes</a></li>
+            <li><a href="#">Add Note</a></li>
+            <li><a href="#">Search</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2026 Notes Management System. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
