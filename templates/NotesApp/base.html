@@ -17,9 +17,9 @@
 
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="#">All Notes</a></li>
-            <li><a href="#">Add Note</a></li>
-            <li><a href="#">Search</a></li>
+            <li><a href="{% url 'note_list' %}">All Notes</a></li>
+            <li><a href="{% url 'note_create' %}">Add Note</a></li>
+            <li><a href="{% url 'search_notes' %}">Search</a></li>
         </ul>
     </nav>
 </header>

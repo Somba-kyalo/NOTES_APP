@@ -10,6 +10,7 @@ Create Note
 {% endblock %}
 
 {% block content %}
+
 <link rel="stylesheet" href="{% static 'css/note_form.css' %}">
 
 <section class="form-section">
@@ -39,8 +40,19 @@ Create Note
             </div>
 
             <div class="form-buttons">
-                <button type="submit" class="save-btn">Save Note</button>
-                <a href="#" class="cancel-btn">Cancel</a>
+                <button type="submit" class="save-btn">
+                    {% if form.instance.pk %}
+                    Update Note
+                    {% else %}
+                    Save Note
+                    {% endif %}
+                </button>
+
+                {% if form.instance.pk %}
+                <a href="{% url 'note_detail' form.instance.pk %}" class="cancel-btn">Cancel</a>
+                {% else %}
+                <a href="{% url 'note_list' %}" class="cancel-btn">Cancel</a>
+                {% endif %}
             </div>
 
         </form>

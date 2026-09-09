@@ -1,9 +1,10 @@
 {% extends 'NotesApp/base.html' %}
 {% load static %}
 
-{% block title %}Search Notes{% endblock %}
+{% block title %}Search Notes | Notes Management System{% endblock %}
 
 {% block content %}
+
 <link rel="stylesheet" href="{% static 'css/search.css' %}">
 
 <section class="search-section">
@@ -11,11 +12,8 @@
     <h1>Search Notes</h1>
 
     <form method="GET" class="search-form">
-
         <input type="text" name="q" placeholder="Search by title or content..." value="{{ request.GET.q }}">
-
         <button type="submit">Search</button>
-
     </form>
 
     {% if notes %}
@@ -30,7 +28,7 @@
 
             <p>{{ note.content|truncatewords:20 }}</p>
 
-            <a href="#">Read More</a>
+            <a href="{% url 'note_detail' note.pk %}">Read More</a>
 
         </div>
 
@@ -41,8 +39,8 @@
     {% elif request.GET.q %}
 
     <div class="no-results">
-        <h2>No notes found.</h2>
-        <p>Try searching with a different keyword.</p>
+        <h2>No Notes Found</h2>
+        <p>No notes matched "<strong>{{ request.GET.q }}</strong>". Try a different keyword.</p>
     </div>
 
     {% endif %}

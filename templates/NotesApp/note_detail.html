@@ -4,6 +4,7 @@
 {% block title %}{{ note.title }} | Notes Management System{% endblock %}
 
 {% block content %}
+
 <link rel="stylesheet" href="{% static 'css/note_detail.css' %}">
 
 <section class="note-detail">
@@ -20,13 +21,14 @@
         <hr>
 
         <div class="note-content">
-            <p>{{ note.content|linebreaks }}</p>
+            {{ note.content|linebreaks }}
         </div>
 
         <div class="note-actions">
-            <a href="#" class="btn edit-btn">Edit Note</a>
-            <a href="#" class="btn delete-btn">Delete Note</a>
-            <a href="#" class="btn back-btn">Back to Notes</a>
+            <a href="{% url 'note_update' note.pk %}" class="btn edit-btn">Edit Note</a>
+            <a href="{% url 'note_delete' note.pk %}" class="btn delete-btn">Delete Note</a>
+            <a href="{% url 'note_list' %}" class="btn back-btn">Back to Notes</a>
+            <a href="{% url 'ai_summarize_note' note.pk %}" class="btn ai-btn">Summarize with AI</a>
         </div>
 
     </div>

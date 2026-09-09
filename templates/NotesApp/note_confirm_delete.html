@@ -1,9 +1,10 @@
 {% extends 'NotesApp/base.html' %}
 {% load static %}
 
-{% block title %}Delete Note{% endblock %}
+{% block title %}Delete Note | Notes Management System{% endblock %}
 
 {% block content %}
+
 <link rel="stylesheet" href="{% static 'css/note_confirm_delete.css' %}">
 
 <section class="delete-section">
@@ -21,7 +22,7 @@
 
             <div class="delete-buttons">
                 <button type="submit" class="delete-btn">Delete</button>
-                <a href="#" class="cancel-btn">Cancel</a>
+                <a href="{% url 'note_detail' note.pk %}" class="cancel-btn">Cancel</a>
             </div>
 
         </form>

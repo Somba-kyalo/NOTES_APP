@@ -4,32 +4,37 @@
 {% block title %}Home | Notes Management System{% endblock %}
 
 {% block content %}
+
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 
 <section class="hero">
     <h1>Welcome to Notes Management System</h1>
+
     <p>Organize your thoughts, ideas, reminders, and important information in one secure place.</p>
 
     <div class="hero-buttons">
-        <a href="#" class="btn btn-primary">View Notes</a>
-        <a href="#" class="btn btn-secondary">Create Note</a>
+        <a href="{% url 'note_list' %}" class="btn btn-primary">View Notes</a>
+        <a href="{% url 'note_create' %}" class="btn btn-secondary">Create Note</a>
     </div>
 </section>
 
 <section class="features">
+
     <div class="feature-card">
         <h2>Create Notes</h2>
-        <p>Write and save important notes whenever you need them.</p>
+        <p>Create and save notes quickly whenever inspiration strikes.</p>
     </div>
 
     <div class="feature-card">
         <h2>Manage Notes</h2>
-        <p>Edit and delete your notes anytime with ease.</p>
+        <p>Update or delete your notes whenever you need to keep them organized.</p>
     </div>
 
     <div class="feature-card">
-        <h2>Search Quickly</h2>
-        <p>Find your notes instantly using the search feature.</p>
+        <h2>Search Notes</h2>
+        <p>Find notes instantly using the built-in search functionality.</p>
     </div>
+
 </section>
+
 {% endblock %}

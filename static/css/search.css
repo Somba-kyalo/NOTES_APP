@@ -1,0 +1,100 @@
+.search-section {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.search-section h1 {
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 30px;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.search-form button {
+    padding: 14px 25px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #1d4ed8;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.note-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(0,0,0,.08);
+}
+
+.note-card h2 {
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.note-card p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.note-card a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.note-card a:hover {
+    text-decoration: underline;
+}
+
+.no-results {
+    background: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(0,0,0,.08);
+}
+
+.no-results h2 {
+    color: #dc2626;
+    margin-bottom: 15px;
+}
+
+.no-results p {
+    color: #666;
+}
+
+@media (max-width:768px) {
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+
+}
